@@ -24,6 +24,9 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+    - conduit
+    - rio
 
 executables:
   orbital-exe:

@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6d081c9fea7cd6852c0985f444ff00b95c31a6d1d133b13694e4d50c13c6d665
+-- hash: b81bd8960c78feb73e252f544b8c60b58540bf3b6b46f55afca62f601c89d6c2
 
 name:           orbital
 version:        0.0.1.0
@@ -34,6 +34,8 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , conduit
+    , rio
   default-language: Haskell2010
 
 executable orbital-exe
