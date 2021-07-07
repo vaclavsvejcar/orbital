@@ -19,17 +19,22 @@ extra-source-files:
 # common to point users to the README.md file.
 description: Please see the README on GitHub at <https://github.com/vaclavsvejcar/orbital#readme>
 
+ghc-options:
+  - -optP-Wno-nonportable-include-path
+
 dependencies:
   - base >= 4.7 && < 5
+  - rio
 
 library:
   source-dirs: src
   dependencies:
     - conduit
-    - rio
+    - cryptonite
+    - memory
 
 executables:
-  orbital-exe:
+  orbital:
     main: Main.hs
     source-dirs: app
     ghc-options:
@@ -40,7 +45,7 @@ executables:
       - orbital
 
 tests:
-  orbital-test:
+  spec:
     main: Spec.hs
     source-dirs: test
     ghc-options:
@@ -48,4 +53,7 @@ tests:
       - -rtsopts
       - -with-rtsopts=-N
     dependencies:
+      - cryptonite
+      - hspec
       - orbital
+    build-tools: hspec-discover
